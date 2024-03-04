@@ -2,5 +2,7 @@
 {
     public class Evidence
     {
+        public List<Polozky> Polozky { get; set; } = new List<Polozky>();
+        public Polozky Polozka { get; set; } = new Polozky();
     }
 }

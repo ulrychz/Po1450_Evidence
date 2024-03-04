@@ -1,9 +1,9 @@
 ﻿<PageTitle>Evidence</PageTitle>
 <h1>Evidence</h1>
 <div class="my-3 p-2 border">
-    <label>Datum: <input type="date" /></label>
-    <label>Náklady: <input type="number" /></label>
-    <label>Výnosy: <input type="number" /></label>
+    <label>Datum: <input type="date" @bind-value = "Evid.Polozka.Datum"/></label>
+    <label>Náklady: <input type="number" @bind-value="Evid.Polozka.Naklady" /></label>
+    <label>Výnosy: <input type="number" @bind-value="Evid.Polozka.Vynosy" /></label>
     <button>Přidat</button>
 </div>
 
@@ -17,5 +17,5 @@
     <p></p>
 </div>
 @code {
-
+    private Models.Evidence Evid { get; set; } = new Models.Evidence();
 }

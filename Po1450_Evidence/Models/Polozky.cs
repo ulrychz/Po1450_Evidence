@@ -2,7 +2,11 @@
 {
     public class Polozky
     {
-        public DateOnly Datum { get; set; }
+        public Polozky() 
+        { 
+            Datum = DateOnly.FromDateTime(DateTime.Now);
+        }
+        public DateOnly Datum { get; set; }// = DateOnly.FromDateTime(DateTime.Now);
         public double Naklady
         {
             get => naklady; set
@@ -24,8 +28,8 @@
             {
                 if (vynosy != value)
                 {
-                    if(value >= 0)
-                        vynosy = value;
+                    vynosy = Math.Abs(value);
+
                 }
             }
         }
