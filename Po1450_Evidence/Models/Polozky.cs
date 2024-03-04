@@ -6,6 +6,14 @@
         { 
             Datum = DateOnly.FromDateTime(DateTime.Now);
         }
+
+        public Polozky(DateOnly datum, double naklady, double vynosy)
+        {
+            Datum = datum;
+            Naklady = naklady;
+            Vynosy = vynosy;
+        }
+
         public DateOnly Datum { get; set; }// = DateOnly.FromDateTime(DateTime.Now);
         public double Naklady
         {
@@ -35,5 +43,10 @@
         }
 
         public double Zisk => Vynosy - Naklady;
+
+        public override string ToString()
+        {
+            return $"Datum: {Datum} - Náklady: {Naklady} - Výnosy: {Vynosy} - Zisk: {Zisk}";
+        }
     }
 }
